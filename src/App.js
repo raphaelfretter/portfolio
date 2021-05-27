@@ -85,7 +85,7 @@ class Menu extends React.Component {
     return (
       <div>
         <Navbar bg="white" variant="light" style={{minWidth: '550px', width: '20%', margin: '0 auto 0 auto', textAlign: 'center', borderRadius: 30}}>
-          <Navbar.Brand style={{borderRadius: 30, backgroundColor: 'white', color: 'rgba(0,0,0,0.5)'}} href="#home">Raphael Fretter - Portfolio</Navbar.Brand>
+          <Navbar.Brand style={{borderRadius: 30, backgroundColor: 'white', color: 'rgba(0,0,0,0.5)'}} href="/portfolio">Raphael Fretter - Portfolio</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
