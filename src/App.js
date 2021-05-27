@@ -12,6 +12,9 @@ import {
   NavDropdown,
   Card 
 } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faFile, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 // function App() {
 //   return (
@@ -55,23 +58,24 @@ class App extends React.Component {
     return (
       <div className="App-header">
           <Menu fixed="top" />
-          <AppWrapper/>
+          <Home />
+          {/* <AppWrapper/> */}
       </div>
     );
   }
 }
 
-class AppWrapper extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+// class AppWrapper extends React.Component {
+//   constructor(props) {
+//     super(props);
+//   }
 
-  render() {
-    return (
-      <body></body>
-    );
-  }
-}
+//   render() {
+//     return (
+//       <body></body>
+//     );
+//   }
+// }
 
 class Menu extends React.Component {
   constructor(props) {
@@ -80,24 +84,22 @@ class Menu extends React.Component {
   render() {
     return (
       <div>
-        <Navbar bg="white" variant="light" style={{minWidth: '875px', width: '50%', margin: '0 25% 0 25%', textAlign: 'center', borderRadius: 30}}>
+        <Navbar bg="white" variant="light" style={{minWidth: '550px', width: '20%', margin: '0 auto 0 auto', textAlign: 'center', borderRadius: 30}}>
           <Navbar.Brand style={{borderRadius: 30, backgroundColor: 'white', color: 'rgba(0,0,0,0.5)'}} href="#home">Raphael Fretter - Portfolio</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="/home">Home</Nav.Link>
-              <Nav.Link href="/resume">Resume</Nav.Link>
+              <Nav.Link href="/portfolio">Home</Nav.Link>
+              <Nav.Link onClick={() => window.open("https://drive.google.com/file/d/1WZoEJeayZSW9Fbv7WwYZ74WbM7poE8d6/view")}>Resume</Nav.Link>
               <NavDropdown title="Projects" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="/tttgame">Tic-Tac-Toe Game</NavDropdown.Item>
+                <NavDropdown.Item href="https://raphaelfretter.github.io/tttgame/">Tic-Tac-Toe Game</NavDropdown.Item>
                 <NavDropdown.Item href="https://raphaelfretter.github.io/quote-machine/">Quote Machine</NavDropdown.Item>
-                <NavDropdown.Divider/>
-                <NavDropdown.Item href="#all-projects">All</NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            <Form inline>
+            {/* <Form inline>
               <FormControl style={{borderRadius: 30}} type="text" placeholder="Search" className="mr-sm-2" />
               <Button className="Menu-button" variant="outline-info">Search</Button>
-            </Form>
+            </Form> */}
           </Navbar.Collapse>
         </Navbar>
       </div>
@@ -106,11 +108,20 @@ class Menu extends React.Component {
 }
 
 function Home() {
+  let d = new Date();
+
   return (
     <div>
-      <Card>
-        <Card.Text>Hello there</Card.Text>
-      </Card>
+      <div>
+      <h1 align="center" style={{marginTop: 300, fontSize: 75}}><b>Raphael Fretter</b></h1>
+      <h3 align="center">Software Developer</h3>
+      </div>
+      <div style={{marginTop: '1rem', textAlign: "center"}}>
+      <Button style={{borderColor:'transparent', backgroundColor: 'white', color: '#99ff99', borderRadius: '50%', height: 50, width: 50, marginRight: 30}} onClick={() => window.open("https://www.linkedin.com/in/raphael-fretter/")}><FontAwesomeIcon icon={faLinkedinIn}/></Button>
+      <Button style={{borderColor:'transparent', backgroundColor: 'white', color: '#99ff99', borderRadius: '50%', height: 50, width: 50, marginRight: 30}} onClick={() => window.open("https://drive.google.com/file/d/1WZoEJeayZSW9Fbv7WwYZ74WbM7poE8d6/view")}><FontAwesomeIcon icon={faFile}/></Button>
+      <Button style={{borderColor:'transparent', backgroundColor: 'white', color: '#99ff99', borderRadius: '50%', height: 50, width: 50, marginRight: 30}} onClick={() => window.open("https://github.com/raphaelfretter")}><FontAwesomeIcon icon={faGithub}/></Button>
+      <Button style={{borderColor:'transparent', backgroundColor: 'white', color: '#99ff99', borderRadius: '50%', height: 50, width: 50}} onClick={() => window.open("mailto:rfrette@bgsu.edu?subject=Reaching Out")}><FontAwesomeIcon icon={faEnvelope}/></Button>
+      </div>
     </div>
   );
 }
