@@ -92,8 +92,8 @@ class Menu extends React.Component {
               <Nav.Link href="/portfolio">Home</Nav.Link>
               <Nav.Link onClick={() => window.open("https://drive.google.com/file/d/1WZoEJeayZSW9Fbv7WwYZ74WbM7poE8d6/view")}>Resume</Nav.Link>
               <NavDropdown title="Projects" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="https://raphaelfretter.github.io/tttgame/">Tic-Tac-Toe Game</NavDropdown.Item>
-                <NavDropdown.Item href="https://raphaelfretter.github.io/quote-machine/">Quote Machine</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => window.open("https://raphaelfretter.github.io/tttgame/")}>Tic-Tac-Toe Game</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => window.open("https://raphaelfretter.github.io/quote-machine/")}>Quote Machine</NavDropdown.Item>
               </NavDropdown>
             </Nav>
             {/* <Form inline>
